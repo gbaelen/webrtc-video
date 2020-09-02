@@ -101,7 +101,7 @@ export default {
 
             console.log("Starting Connection to Websocket Server");
 
-            this.connection = new WebSocket("ws://go-signaling.herokuapp.com/echo");
+            this.connection = new WebSocket("wss://go-signaling.herokuapp.com/echo");
 
             this.connection.onopen = (event) => {
                 console.log(event);
