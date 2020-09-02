@@ -1,3 +1,3 @@
 module.exports = {
-    publicPath: '/webrtc-video/',
+    publicPath: process.env.NODE_ENV === 'production' ? '/webrtc-video/' : '/',
 }
