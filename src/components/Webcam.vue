@@ -83,7 +83,7 @@ export default {
                 return
             }
 
-            this.sendMessage("get_connected")
+            this.sendMessage("get_connected_users")
         },
         startWebcam: async function() {
             if (this.connection) {
@@ -112,8 +112,9 @@ export default {
             this.connection.onmessage = (event) => {
                 console.log(event.data)
                 let data = JSON.parse(event.data);
-                switch(data.message_type) {
-                    case "connected_user":
+                switch(data.message) {
+                    case "users_list":
+                        console.log(data.data);
                         this.connected_users = data.data;
                         break;
                     case "ready_to_establish_connection":
